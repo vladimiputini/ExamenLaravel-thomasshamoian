@@ -15,7 +15,7 @@ class TaakController extends Controller
      */
     public function index()
     {
-        $taak = Taak::all();
+        $taak = Taak::orderBy('created_at', 'desc')->get();
 
         return view('posts.index',compact('taak'));
     }
@@ -54,9 +54,9 @@ class TaakController extends Controller
      * @param  \App\taak  $taak
      * @return \Illuminate\Http\Response
      */
-    public function show(taak $taak)
+    public function show($id)
     {
-        $taak = Taak::find($taak->id);
+        $taak = Taak::find($id);
 
         return view('posts.show',compact('taak'));
 
@@ -70,9 +70,9 @@ class TaakController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::find($id);
+        $taak = Taak::find($id);
 
-        return view('posts.edit', compact('post'));
+        return view('posts.edit', compact('taak'));
     }
 
     /**
@@ -82,9 +82,24 @@ class TaakController extends Controller
      * @param  \App\taak  $taak
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, taak $taak)
+    public function update(Request $request,$id)
     {
-        //
+        //1# Store the data
+        $taak = Taak::find($id);
+
+        $taak->titel = $request->input('titel');
+        $taak->bericht = $request->input('bericht');
+//        $taak->Einddatum = $request->input('Einddatum');
+
+////        $nerd = Nerd::find($id);
+//        $post->titel       = Input::get('titel');
+//        $post->inhoud      = Input::get('inhoud');
+//        $post->Einddatum   = Input::get('Einddatum');
+
+        $taak->save();
+
+//
+        return view('posts.show',compact('taak'));
     }
 
     /**
@@ -93,8 +108,13 @@ class TaakController extends Controller
      * @param  \App\taak  $taak
      * @return \Illuminate\Http\Response
      */
-    public function destroy(taak $taak)
+    public function delete($id)
     {
-        //
+         $taak = Taak::find($id)->delete();
+
+//        $posts->forcedelete();
+
+//        Session::flash('success', 'The post was successfully deleted.');
+        return redirect('/');
     }
 }

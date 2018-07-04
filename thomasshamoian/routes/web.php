@@ -19,12 +19,12 @@ Route::get('/posts/create','TaakController@create');
 
 Route::post('/posts','TaakController@store');
 
-Route::get('/posts/{post}/', 'TaakController@show');
+Route::get('/posts/{post}/',        'TaakController@show');
 
-Route::get('/posts/{id}/edit',      'PostsController@edit')->name('editpost');
+Route::get('/posts/{id}/edit',      'TaakController@edit')->name('editpost');
 
-Route::patch('/posts/{id}/edit',      'PostsController@update')->name('updatepost');
+Route::patch('/posts/{id}/edit',      'TaakController@update')->name('updatepost');
 
-Route::delete('/posts/{id}/index',      'PostsController@delete')->name('deletepost');
+Route::delete('/posts/{id}/index',      'TaakController@delete')->name('deletepost');
 
 

@@ -26,8 +26,8 @@
             <h2>{{ $taak->titel }}</h2>
             <p>
                 {{--<input type="hidden" value="{{$post->find()}}">--}}
-                <strong>Inhoud:</strong> {{ $taak->inhoud }}<br>
-                <strong>Einddatum:</strong> {{ $taak->Einddatum }}
+                <strong>Titel:</strong> {{ $taak->titel }}<br>
+                <strong>Bericht:</strong> {{ $taak->bericht }}
             </p>
         </div>
         {{ Form::open(['route' => ['deletepost', $taak->id], 'method' => 'delete']) }}

@@ -19,6 +19,7 @@
       <excludeFolder url="file://$MODULE_DIR$/thomasshamoian/vendor/jakub-onderka/php-console-highlighter" />
       <excludeFolder url="file://$MODULE_DIR$/thomasshamoian/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/thomasshamoian/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/thomasshamoian/vendor/laravelcollective/html" />
       <excludeFolder url="file://$MODULE_DIR$/thomasshamoian/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/thomasshamoian/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/thomasshamoian/vendor/monolog/monolog" />

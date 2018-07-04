@@ -1,8 +1,24 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: mac
- * Date: 04/07/18
- * Time: 10:35
- */?>
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Examen Laravel 5.5</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=""></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{URL::to('/posts/create')}}">create</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?return redirect('/'); ?>"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

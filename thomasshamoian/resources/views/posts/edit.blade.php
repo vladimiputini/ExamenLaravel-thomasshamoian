@@ -27,7 +27,7 @@
     <!-- if there are creation errors, they will show here -->
         {{--{{ HTML::ul($errors->all()) }}--}}
 
-        {{ Form::model($post, array('route' => array('updatepost', $post->id), 'method' => 'patch')) }}
+        {{ Form::model($taak, array('route' => array('updatepost', $taak->id), 'method' => 'patch')) }}
         <div class="form-group">
             {{ Form::label('titel', 'titel') }}
             {{ Form::text('titel', null, array('class' => 'form-control')) }}
@@ -35,7 +35,7 @@
 
         <div class="form-group">
             {{ Form::label('bericht', 'bericht') }}
-            {{ Form::text('inhoud', null, array('class' => 'form-control')) }}
+            {{ Form::text('bericht', null, array('class' => 'form-control')) }}
         </div>
 
         {{ Form::submit('Edit the Post!', array('class' => 'btn btn-primary')) }}
