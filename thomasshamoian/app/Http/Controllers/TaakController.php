@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\taak;
+use App\Taak;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Session;
 
 class TaakController extends Controller
 {
@@ -14,7 +15,9 @@ class TaakController extends Controller
      */
     public function index()
     {
-        //
+        $taak = Taak::all();
+
+        return view('posts.index',compact('taak'));
     }
 
     /**
@@ -24,7 +27,7 @@ class TaakController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -33,9 +36,16 @@ class TaakController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+                Taak::create([
+
+            'titel' => request('titel'),
+            'bericht' => request('bericht'),
+
+        ]);
+
+        return redirect('/');
     }
 
     /**
@@ -46,7 +56,10 @@ class TaakController extends Controller
      */
     public function show(taak $taak)
     {
-        //
+        $taak = Taak::find($taak->id);
+
+        return view('posts.show',compact('taak'));
+
     }
 
     /**
@@ -55,9 +68,11 @@ class TaakController extends Controller
      * @param  \App\taak  $taak
      * @return \Illuminate\Http\Response
      */
-    public function edit(taak $taak)
+    public function edit($id)
     {
-        //
+        $post = Post::find($id);
+
+        return view('posts.edit', compact('post'));
     }
 
     /**
