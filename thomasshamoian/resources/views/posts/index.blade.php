@@ -18,7 +18,7 @@
             <div class="col-md-12">
 
                 <h1 class="my-4">Informatie
-                 
+
                 </h1>
 
                 <!-- Blog Post -->
